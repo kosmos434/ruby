@@ -97,13 +97,3 @@
 #     bottles -= 1
 # end
 
-puts 'Gramma talkin'
-talkin = gets.chomp
-while talkin != talkin.upcase
-    puts 'I CAN\'T HEAR YOU SONNY'
-    talkin = gets.chomp
-    if talkin == talkin.upcase
-        puts 'NO, NOT SINCE ' + rand(1930..1951).to_s
-    end
-end
-
