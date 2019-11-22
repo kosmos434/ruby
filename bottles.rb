@@ -1,25 +1,22 @@
+# Ninety-nine bottles of beer on the wall...
+
+# TODO
+# More lyrics
 
 
-def numberText number
-    # Edge cases
-    if number < 0
-        return "Please enter a non-negative number"
-    end
-    if number == 0
-        return "zero"
-    end
-
+def bottlesOfBeer number
 
     # Outputted string at the end
     numString = ''
 
-    # Word arrays
+
+    # word arrays
     onesPlace = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     tensPlace = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
     teensPlace = ['eleventeen', 'twelveteen','thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
 
 
-    # * Millions
+    # * Millions place
     # leftover is how much of the number we have leftover
     # write is the part we are writing out right now
     leftover = number
@@ -30,7 +27,7 @@ def numberText number
     leftover = leftover - write * 1000000
     # so ... write is 1, leftover is 800000
     if write > 0
-        millions = numberText write
+        millions = bottlesOfBeer write
         numString = numString + millions + ' million'
 
         if leftover > 0
@@ -44,7 +41,7 @@ def numberText number
     leftover = leftover - write * 1000
 
     if write > 0
-        thousands = numberText write
+        thousands = bottlesOfBeer write
         numString = numString + thousands + ' thousand'
 
         if leftover > 0
@@ -60,7 +57,7 @@ def numberText number
     leftover = leftover - write * 100
 
     if write > 0
-        hundreds = numberText write
+        hundreds = bottlesOfBeer write
         numString = numString + hundreds + ' hundred'
 
         if leftover > 0
@@ -92,21 +89,20 @@ def numberText number
     if write > 0
         numString = numString + onesPlace[write - 1]
     end
-
     numString
-end
+end   
 
-puts numberText(  0)
-puts numberText(  9)
-puts numberText( 10)
-puts numberText( 11)
-puts numberText( 17)
-puts numberText( 32)
-puts numberText( 88)
-puts numberText( 99)
-puts numberText(100)
-puts numberText(101)
-puts numberText(234)
-puts numberText(3211)
-puts numberText(999999)
-puts numberText(1213800)
+
+bottles = 100
+while bottles > 0
+    if bottles == 1
+        puts "one bottle of beer on the wall"
+        bottles -= 1
+    else
+        puts bottlesOfBeer(bottles) + " bottles of beer on the wall"
+        bottles -= 1
+    end
+end
+puts "no more bottles of beer *flies away*"
+
+# puts bottlesOfBeer(119)
