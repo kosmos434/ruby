@@ -56,6 +56,36 @@ class Dragon
         end
     end
 
+    def menu
+        puts '#' * 22
+        puts '1. Feed your pet'
+        puts '2. Rock your pet'
+        puts '3. Toss your pet'
+        puts '4. Walk your pet'
+        puts '5. Put to sleep (not forever)'
+        puts '#' * 22
+
+        userInput = gets.chomp.to_i
+
+        case userInput
+        when 1
+            feed
+        when 2
+            rock
+        when 3
+            toss
+        when 4
+            walk
+        when 5
+            putToBed
+        else
+            puts 'Try again...'
+        end
+
+        menu
+    end
+
+
     private
 
     # private means that the methods defined here are methods internal to the object
@@ -112,11 +142,4 @@ class Dragon
 end
 
 pet = Dragon.new 'Chauncey'
-pet.feed
-pet.toss
-pet.walk
-pet.rock
-pet.putToBed
-pet.putToBed
-pet.putToBed
-pet.putToBed
+pet.menu
