@@ -8,4 +8,4 @@ The purpose is to get a greater familiarity with Ruby.
 https://www.theodinproject.com/courses/web-development-101/lessons/ruby-basics
 ```
 
-###### crab emoji 🦀
+###### 🦀
